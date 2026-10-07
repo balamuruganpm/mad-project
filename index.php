@@ -1,0 +1,5 @@
+<?php
+// index.php
+// Redirect root requests to the public directory
+header("Location: public/");
+exit;

@@ -1,0 +1,273 @@
+/* public/assets/css/custom.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #0c3b7a; /* Corporate Deep Navy */
+    --primary-hover: #082955;
+    --secondary-color: #475569;
+    --background-color: #f1f5f9;
+    --sidebar-bg: #ffffff; /* Light sidebar */
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Modern Card Layout */
+.card-custom {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-custom:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* Modern Sidebar */
+.sidebar-custom {
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 24px 16px;
+    box-shadow: 1px 0 3px rgba(0,0,0,0.02);
+    z-index: 1000;
+}
+
+.sidebar-custom .nav-link-custom {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: var(--secondary-color); /* Dark muted text */
+    border-radius: 8px; /* Sharper */
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-custom .nav-link-custom i {
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-custom .nav-link-custom:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.sidebar-custom .nav-link-custom.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Accordion modifications for sidebar */
+.sidebar-custom .accordion-button {
+    padding: 12px 16px;
+    color: var(--secondary-color);
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.sidebar-custom .accordion-button:not(.collapsed) {
+    color: var(--primary-color);
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.sidebar-custom .accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.sidebar-custom .accordion-button:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.sidebar-custom .accordion-item {
+    border: none;
+    background-color: transparent;
+}
+
+.sidebar-custom .accordion-body {
+    padding: 4px 0 4px 12px;
+}
+
+.sidebar-custom .accordion-body .nav-link-custom {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+}
+
+/* Modern Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Inputs & Form Fields */
+.form-control-custom {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.form-control-custom:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive Drawer for mobile */
+@media (max-width: 767.98px) {
+    .sidebar-custom {
+        position: fixed;
+        left: -280px;
+        width: 280px;
+        z-index: 1050;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar-custom.show {
+        left: 0;
+    }
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(2px);
+        z-index: 1040;
+    }
+    .sidebar-overlay.show {
+        display: block;
+    }
+}
+
+/* Modern Clean Tables */
+.table {
+    --bs-table-bg: transparent;
+    color: var(--text-main);
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px;
+    background-color: #f8fafc;
+}
+
+.table td {
+    font-weight: 500;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Custom Badges */
+.m3-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.m3-badge-soft-success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.m3-badge-soft-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.m3-badge-soft-secondary {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+/* Scrollbar styling */
+.hide-scrollbar::-webkit-scrollbar {
+    height: 8px;
+}
+.hide-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9; 
+    border-radius: 4px;
+}
+.hide-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1; 
+    border-radius: 4px;
+}
+.hide-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8; 
+}
+
+/* Gradients text (Optional) - Removed for Corporate Theme */
+.text-gradient {
+    color: var(--primary-color);
+}

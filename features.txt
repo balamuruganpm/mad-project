@@ -1,0 +1,21 @@
+[all links must have copy option]
+
+1. Final Assembly (store all links and cutomer name and job id and that particular id link + qr)
+
+[view: all links to show there]
+
+2. Breaker Department (job id, cutomer name, checklist_doc, breaker_testing_report, link)
+
+[view: all links must show]
+
+3. PT Department (job id, customer name, pt_doc,link)
+
+4. CT Department (job id, customer name, pt_doc,link)
+
+5. Busbar Department (job id, customer name, pt_doc,link)
+
+6. Design Department (job id, customer name, pt_doc, link)
+
+7. Incoming QC (seimon (company) -> product -> year -> month -> report[at last link copy option for that report])
+
+[search options for all, job id only]
